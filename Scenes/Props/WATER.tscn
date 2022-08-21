@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Shaders/WaterShader.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets/Art/Envirement/Forest/Boulder.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/blue_tint = Color( 0, 0.784314, 1, 1 )
+shader_param/sprite_scale = Vector2( -1.75, -0.214 )
+shader_param/scale_x = 0.67
+
+[node name="WATER" type="Sprite"]
+material = SubResource( 2 )
+position = Vector2( 160.521, 581.367 )
+scale = Vector2( -1.8123, -0.578388 )
+texture = ExtResource( 2 )

@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Art/Envirement/Hell/EndGame.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/End.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Art/UI/Button03-Normal.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/UI/Button03-Hover.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/UI/Button02-Pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MainTheme.tres" type="Theme" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "EndGame"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "LastScene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -11.0
+margin_top = -3.0
+margin_right = 1067.0
+margin_bottom = 601.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="ContinueButton" type="TextureButton" parent="."]
+margin_left = 862.0
+margin_top = 532.0
+margin_right = 933.0
+margin_bottom = 557.0
+rect_scale = Vector2( 2.12093, 2.2827 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ContinueButton"]
+anchor_left = 0.07
+anchor_top = 0.08
+anchor_right = 0.93
+anchor_bottom = 0.72
+margin_left = 4.93134
+margin_top = 1.94269
+margin_right = 54.8713
+margin_bottom = 6.94269
+rect_scale = Vector2( 0.47828, 0.5322 )
+theme = ExtResource( 6 )
+text = "Back To Menu"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1027.0
+margin_bottom = 600.0
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+autoplay = "LastScene"
+anims/EndGame = SubResource( 1 )
+anims/LastScene = SubResource( 3 )
+anims/RESET = SubResource( 2 )
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]

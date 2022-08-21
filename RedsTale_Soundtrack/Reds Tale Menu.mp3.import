@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Reds Tale Menu.mp3-37df52f89ae9170384b47d05d5a81a95.mp3str"
+
+[deps]
+
+source_file="res://RedsTale_Soundtrack/Reds Tale Menu.mp3"
+dest_files=[ "res://.import/Reds Tale Menu.mp3-37df52f89ae9170384b47d05d5a81a95.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

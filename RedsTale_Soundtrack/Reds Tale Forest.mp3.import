@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Reds Tale Forest.mp3-8a351ef3aba54a05004508f3f9889b4c.mp3str"
+
+[deps]
+
+source_file="res://RedsTale_Soundtrack/Reds Tale Forest.mp3"
+dest_files=[ "res://.import/Reds Tale Forest.mp3-8a351ef3aba54a05004508f3f9889b4c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

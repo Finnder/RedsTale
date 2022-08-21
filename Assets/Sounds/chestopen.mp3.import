@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/chestopen.mp3-8bd3807dd5d335e443c689779ade6b5b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/chestopen.mp3"
+dest_files=[ "res://.import/chestopen.mp3-8bd3807dd5d335e443c689779ade6b5b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

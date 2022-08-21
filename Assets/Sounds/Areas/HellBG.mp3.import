@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HellBG.mp3-8653163f7e1b0902aa3318b23e0ca3ee.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Areas/HellBG.mp3"
+dest_files=[ "res://.import/HellBG.mp3-8653163f7e1b0902aa3318b23e0ca3ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

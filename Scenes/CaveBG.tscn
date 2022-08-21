@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Art/Envirement/Cave/CaveBG4.png" type="Texture" id=1]
+
+[node name="CaveBg4" type="Sprite"]
+modulate = Color( 0.552941, 0.552941, 0.552941, 1 )
+light_mask = 2
+position = Vector2( 443, 249 )
+scale = Vector2( 1.20672, 1.46972 )
+texture = ExtResource( 1 )

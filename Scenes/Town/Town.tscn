@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Art/ForestSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/IMPORTS/Pixel Skies Background pack by Digital Moons 1.1/Pixel Skies 1920x1080px (Full HD)/48_PixelSky_1920x1080.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Town/Building/Building.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Props/Bag.tscn" type="PackedScene" id=5]
+
+[node name="Town" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -311, -168 )
+z_index = 1
+
+[node name="TownBG" type="Sprite" parent="Player"]
+self_modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+position = Vector2( 0.753044, -86.25 )
+scale = Vector2( 0.324216, 0.256019 )
+z_index = -3
+texture = ExtResource( 2 )
+
+[node name="Bag" parent="Player" instance=ExtResource( 5 )]
+position = Vector2( 280, 43 )
+scale = Vector2( 1.67139, 1.69546 )
+
+[node name="PlayerTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+format = 1
+tile_data = PoolIntArray( -17, 0, 0, -16, 0, 0, -15, 0, 0, -14, 0, 0, -13, 0, 0, -12, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0 )
+
+[node name="TownStructures" type="Node" parent="."]
+
+[node name="Building" parent="." instance=ExtResource( 4 )]
+position = Vector2( -8, -93 )
+buildingLevel = 1
+
+[node name="Building2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 338, -95 )
+cur_building = 1
+buildingLevel = 1

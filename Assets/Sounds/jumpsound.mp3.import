@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jumpsound.mp3-4308b4a8e6840f6cc221ff2aec0b4594.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/jumpsound.mp3"
+dest_files=[ "res://.import/jumpsound.mp3-4308b4a8e6840f6cc221ff2aec0b4594.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

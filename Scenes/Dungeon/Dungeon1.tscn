@@ -1,0 +1,175 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Dungeon.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Art/Envirement/Cave/Top.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/CaveBG.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Art/CaveSet.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/LevelChanger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/CavesWorldEffect.tres" type="Environment" id=7]
+[ext_resource path="res://Assets/Art/Envirement/Cave/SmallRock.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Props/WATER.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Props/Sign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Art/Envirement/Cave/Boulder.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/Envirement/Cave/CornerRock.png" type="Texture" id=12]
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CaveBg4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 443, 284.143 )
+scale = Vector2( 1.20672, 1.75086 )
+z_index = -6
+
+[node name="Background" type="TileMap" parent="."]
+modulate = Color( 0.317647, 0.317647, 0.317647, 1 )
+self_modulate = Color( 0.345098, 0.345098, 0.345098, 1 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+format = 1
+tile_data = PoolIntArray( 983045, 3, 0 )
+
+[node name="WalkingTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131094, 3, 0, 131095, 3, 0, 131096, 3, 0, 786434, 4, 0, 786435, 4, 0, 786436, 4, 0, 786437, 4, 0, 786438, 4, 0, 786439, 4, 0, 786440, 4, 0, 786441, 4, 0, 786442, 536870916, 0, 786443, 536870919, 0, 786448, 7, 0, 786449, 536870916, 0, 786450, 536870916, 0, 786451, 4, 0, 786452, 4, 0, 786453, 4, 0, 786454, 4, 0, 786455, 4, 0, 786456, 4, 0, 786457, 4, 0, 983053, 3, 0 )
+
+[node name="WallTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 262146, -1610612732, 0, 327682, -1610612732, 0, 393218, -1610612732, 0, 458754, -1610612732, 0, 524289, -1610612732, 0, 524290, -1610612732, 0, 589825, -1610612732, 0, 655361, -1610612732, 0, 720897, -1610612732, 0, 983056, 3, 0 )
+
+[node name="Foreground" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196612, 2, 0, 196613, 2, 0, 196630, 2, 0 )
+
+[node name="EnvirementProps" type="Node" parent="."]
+
+[node name="SmallRock" type="Sprite" parent="EnvirementProps"]
+position = Vector2( 90.8526, 269.608 )
+rotation = 1.52385
+scale = Vector2( 1.73077, 1.47368 )
+texture = ExtResource( 8 )
+
+[node name="SmallRock2" type="Sprite" parent="EnvirementProps"]
+position = Vector2( 101.853, 241.608 )
+rotation = 1.28879
+scale = Vector2( 1.73077, 1.47368 )
+texture = ExtResource( 8 )
+
+[node name="SmallRock3" type="Sprite" parent="EnvirementProps"]
+position = Vector2( 102.853, 214.608 )
+rotation = 2.28009
+scale = Vector2( 1.73077, 1.47368 )
+texture = ExtResource( 8 )
+
+[node name="SmallRock4" type="Sprite" parent="EnvirementProps"]
+position = Vector2( 104.853, 184.608 )
+rotation = 1.63051
+scale = Vector2( 1.73077, 1.47368 )
+texture = ExtResource( 8 )
+
+[node name="SmallRock5" type="Sprite" parent="EnvirementProps"]
+position = Vector2( 101.853, 158.608 )
+rotation = 2.07555
+scale = Vector2( 1.73077, 1.47368 )
+texture = ExtResource( 8 )
+
+[node name="SmallRock6" type="Sprite" parent="EnvirementProps"]
+position = Vector2( 102.853, 129.608 )
+rotation = 2.07098
+scale = Vector2( 1.73077, 1.47368 )
+texture = ExtResource( 8 )
+
+[node name="WATER" parent="EnvirementProps" instance=ExtResource( 9 )]
+position = Vector2( 438, 463 )
+rotation = -3.14159
+scale = Vector2( 3.10083, 1.01264 )
+z_index = 5
+
+[node name="Boulder" type="Sprite" parent="EnvirementProps"]
+modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
+light_mask = 2
+position = Vector2( 439, 430 )
+scale = Vector2( 1.52366, 1.33755 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Sign" parent="EnvirementProps" instance=ExtResource( 10 )]
+position = Vector2( 259, 368 )
+signMessage = "Press Space To Jump"
+
+[node name="CornerRock" type="Sprite" parent="EnvirementProps"]
+modulate = Color( 0.454902, 0.454902, 0.454902, 1 )
+position = Vector2( 122, 236 )
+rotation = 0.133382
+scale = Vector2( 1.52366, 1.33755 )
+texture = ExtResource( 12 )
+
+[node name="CornerRock2" type="Sprite" parent="EnvirementProps"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+position = Vector2( 216, 141 )
+rotation = 1.57267
+scale = Vector2( 1.4239, 1.74082 )
+texture = ExtResource( 12 )
+
+[node name="CornerRock4" type="Sprite" parent="EnvirementProps"]
+modulate = Color( 0.329412, 0.32549, 0.32549, 1 )
+position = Vector2( 514, 129 )
+rotation = 1.5235
+scale = Vector2( 1.29295, 1.66065 )
+texture = ExtResource( 12 )
+
+[node name="CornerRock3" type="Sprite" parent="EnvirementProps"]
+modulate = Color( 0.698039, 0.698039, 0.698039, 1 )
+position = Vector2( 732, 163 )
+rotation = 5.87541
+scale = Vector2( 1.52366, 1.33755 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="Boulder2" type="Sprite" parent="EnvirementProps"]
+modulate = Color( 0.317647, 0.313726, 0.313726, 1 )
+position = Vector2( 214, 493 )
+rotation = 0.133382
+scale = Vector2( 1.52366, 1.33755 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 103, 380 )
+scale = Vector2( 0.997845, 0.986186 )
+
+[node name="BotPart" type="Sprite" parent="."]
+self_modulate = Color( 0.215686, 0.215686, 0.215686, 1 )
+position = Vector2( -263, 454 )
+scale = Vector2( 3.45413, 2.29861 )
+z_index = 6
+texture = ExtResource( 2 )
+offset = Vector2( 199.625, 0 )
+flip_h = true
+flip_v = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 447, 274 )
+scale = Vector2( 0.862795, 0.875825 )
+current = true
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="LevelChanger" parent="." instance=ExtResource( 6 )]
+position = Vector2( 333, 560 )
+scale = Vector2( 23.6331, -0.343295 )
+levelType = 2
+
+[node name="LevelChanger2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 813, 348 )
+scale = Vector2( 4.72909, 1.28056 )

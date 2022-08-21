@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Orb.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Art/GameMechanics/Orb3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/GameMechanics/Orb1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/GameMechanics/Orb2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Envirement/BasicLight.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.1852
+
+[node name="Orb" type="AnimatedSprite"]
+frames = SubResource( 1 )
+speed_scale = 2.5
+playing = true
+script = ExtResource( 1 )
+playerColorChange = Color( 0.0980392, 0.913725, 1, 1 )
+jumpandspeedColor = Color( 0.780392, 1, 0, 1 )
+
+[node name="OrbArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrbArea"]
+position = Vector2( -0.479721, 0.956341 )
+scale = Vector2( 1.0032, 0.952768 )
+shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+texture_scale = 0.93
+energy = 1.82
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Anvil Hit.mp3-f644b7aadb32c9769e934241ee3091a9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Anvil Hit.mp3"
+dest_files=[ "res://.import/Anvil Hit.mp3-f644b7aadb32c9769e934241ee3091a9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

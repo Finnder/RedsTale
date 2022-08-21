@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Dungeon.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/CavesWorldEffect.tres" type="Environment" id=2]
+[ext_resource path="res://Assets/Art/HellSet.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/DemonMouth.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Orb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Props/Chest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/CaveBG.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/LevelChanger.tscn" type="PackedScene" id=9]
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CaveBg5" parent="." instance=ExtResource( 7 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 555, -157 )
+scale = Vector2( 4.96477, 7.00905 )
+z_index = -10
+
+[node name="Background" type="TileMap" parent="."]
+self_modulate = Color( 0.345098, 0.345098, 0.345098, 1 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+collision_layer = 2
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( -262114, 0, 0, -65535, 1073741828, 0 )
+
+[node name="WalkingTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 196608, 536870915, 0, 196609, 536870912, 0, 196610, 536870912, 0, 196611, 536870912, 0, 196612, 536870912, 0, 196613, 536870912, 0, 196614, 536870912, 0, 196615, 536870914, 0 )
+
+[node name="WallTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -851968, -1610612733, 0, -851967, 1610612739, 0, -851966, 1610612739, 0, -851965, 1610612739, 0, -851964, 1610612739, 0, -851963, 1610612739, 0, -851962, 1610612739, 0, -851933, -2147483648, 0, -786432, -1610612733, 0, -786397, -2147483648, 0, -720861, -2147483648, 0, -589828, -1610612736, 0, -655325, -2147483648, 0, -524292, -1610612736, 0, -589789, -2147483648, 0, -458756, -1610612736, 0, -524253, -2147483648, 0, -393220, -1610612736, 0, -458717, -2147483648, 0, -327684, -1610612736, 0, -393181, -2147483648, 0, -327645, -2147483648, 0, -262109, -2147483648, 0, -196573, -2147483648, 0, -131037, -2147483648, 0, -1, -536870912, 0, -65501, -2147483648, 0, 65535, -536870912, 0, 35, -2147483648, 0, 131071, -536870912, 0, 65571, -2147483648, 0, 196607, -536870912, 0, 131107, -2147483648, 0, 196643, -2147483648, 0, 262179, -2147483648, 0, 327715, -2147483648, 0, 393251, -2147483648, 0, 458787, -2147483648, 0, 524323, -2147483648, 0, 589859, -2147483648, 0 )
+
+[node name="DeathTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -786426, -1073741819, 0, -720890, -1073741819, 0, -720889, -1073741819, 0, -655352, -1073741819, 0, -589815, -1073741819, 0, -524284, -1610612731, 0, -524279, -1073741819, 0, -458747, -1610612731, 0, -458742, -1073741819, 0, -393210, -1610612731, 0, -393206, -1073741819, 0, -327674, -1610612731, 0, -327669, -1073741819, 0, -262138, -1610612731, 0, -262132, -1073741819, 0, -196601, -1610612731, 0, -196596, -1073741819, 0, -65539, 5, 0, -65538, 5, 0, -65537, 5, 0, -131072, 5, 0, -131071, 5, 0, -131070, 5, 0, -131069, 5, 0, -131068, 5, 0, -131067, 5, 0, -131066, 5, 0, -131065, -1610612731, 0, -131059, -1073741819, 0, -3, 1610612741, 0, -2, 1610612741, 0, -1, 1610612741, 0, -65536, 1610612741, 0, -65535, 1610612741, 0, -65534, 1610612741, 0, -65533, 1610612741, 0, -65532, 1610612741, 0, -65531, 1610612741, 0, -65530, 1610612741, 0, -65529, -1610612731, 0, -65523, -1073741819, 0, 13, -1073741819, 0, 65549, -1073741819, 0, 131085, -1073741819, 0, 196621, -1073741819, 0, 262151, -1610612731, 0, 262157, -1073741819, 0, 327687, -1610612731, 0, 327693, -1073741819, 0, 393224, -1610612731, 0, 393229, -1073741819, 0, 458761, -1610612731, 0, 458766, -1073741819, 0, 524297, -1610612731, 0, 524302, -1073741819, 0 )
+
+[node name="Foreground" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="EnvirementProps" type="Node" parent="."]
+
+[node name="Orb" parent="EnvirementProps" instance=ExtResource( 5 )]
+modulate = Color( 1, 0.305882, 0.45098, 1 )
+position = Vector2( 30, -224 )
+speed_scale = 2.0
+playerColorChange = Color( 0.611765, 0.105882, 0.603922, 1 )
+orbType = 2
+
+[node name="DemonMouth" parent="EnvirementProps" instance=ExtResource( 4 )]
+position = Vector2( -74, -259 )
+offset = Vector2( 100, 0 )
+flip_h = true
+
+[node name="DemonMouth2" parent="EnvirementProps" instance=ExtResource( 4 )]
+position = Vector2( 377, 353 )
+rotation = -1.7867
+scale = Vector2( 1.30037, 1.22829 )
+offset = Vector2( 100, 30 )
+flip_h = true
+flip_v = true
+
+[node name="Chest" parent="EnvirementProps" instance=ExtResource( 6 )]
+position = Vector2( 48, 64 )
+CollectableInside = 7
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( -58, -213 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, -54 )
+scale = Vector2( 2, 2 )
+current = true
+zoom = Vector2( 1.2, 1.2 )
+
+[node name="LevelChanger" parent="." instance=ExtResource( 9 )]
+position = Vector2( 397, 324 )
+rotation = 1.28728
+scale = Vector2( 2.79423, 2.51206 )
+
+[node name="LevelChanger2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -204, 616 )
+scale = Vector2( 150.354, -0.560767 )
+levelType = 2

@@ -1,0 +1,265 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Art/UI/Button02-Normal.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/UI/Panel2.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Art/UI/Button02-Pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/UI/CheckBox-Notpressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/UI/CheckBox.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/UI/Button03-Pressedl.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/UI/Button03-Hover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/UI/Button03-Normal.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 128, 64 )
+modulate_color = Color( 1, 1, 1, 0.741176 )
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Pause" type="Control" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Background2" type="Panel" parent="Pause"]
+modulate = Color( 0.0627451, 0.0627451, 0.0627451, 0.407843 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Pause"]
+margin_left = 377.0
+margin_top = 21.0
+margin_right = 437.0
+margin_bottom = 42.0
+rect_scale = Vector2( 4.52526, 4.808 )
+theme = ExtResource( 1 )
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="CurrentLevel" type="Label" parent="Pause"]
+modulate = Color( 0.647059, 0.639216, 0.639216, 1 )
+margin_left = 435.0
+margin_top = 122.0
+margin_right = 970.0
+margin_bottom = 143.0
+rect_scale = Vector2( 1.10081, 1.15501 )
+theme = ExtResource( 1 )
+text = "Current Level: "
+valign = 1
+
+[node name="CurrentTime" type="Label" parent="Pause"]
+modulate = Color( 0.847059, 0.823529, 0.482353, 1 )
+margin_left = 435.0
+margin_top = 146.0
+margin_right = 970.0
+margin_bottom = 167.0
+rect_scale = Vector2( 1.10081, 1.15501 )
+theme = ExtResource( 1 )
+text = "Current Time: "
+valign = 1
+
+[node name="Resume" type="TextureButton" parent="Pause"]
+margin_left = 387.0
+margin_top = 189.0
+margin_right = 452.0
+margin_bottom = 210.0
+rect_scale = Vector2( 3.53639, 3.82547 )
+action_mode = 0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Pause/Resume"]
+anchor_left = 0.06
+anchor_top = 0.25
+anchor_right = 0.905
+anchor_bottom = 0.775
+margin_left = -1.9
+margin_top = -5.25
+margin_right = 67.175
+margin_bottom = 12.725
+rect_scale = Vector2( 0.506748, 0.550498 )
+mouse_default_cursor_shape = 2
+text = "Resume"
+align = 1
+valign = 1
+
+[node name="Settings" type="TextureButton" parent="Pause"]
+margin_left = 423.0
+margin_top = 275.0
+margin_right = 487.0
+margin_bottom = 296.0
+rect_scale = Vector2( 2.48284, 2.91986 )
+action_mode = 0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Pause/Settings"]
+anchor_left = 0.06
+anchor_top = 0.25
+anchor_right = 0.905
+anchor_bottom = 0.775
+margin_left = -1.84
+margin_top = -3.25
+margin_right = 58.08
+margin_bottom = 10.725
+rect_scale = Vector2( 0.542823, 0.464058 )
+mouse_default_cursor_shape = 2
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="DebugSetTime" type="TextureButton" parent="Pause"]
+margin_left = 61.0
+margin_top = 288.0
+margin_right = 115.0
+margin_bottom = 301.0
+rect_scale = Vector2( 2.83315, 4.18208 )
+action_mode = 0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Pause/DebugSetTime"]
+anchor_left = 0.06
+anchor_top = 0.25
+anchor_right = 0.905
+anchor_bottom = 0.775
+margin_left = -0.24
+margin_top = -0.25
+margin_right = 68.13
+margin_bottom = 13.925
+rect_scale = Vector2( 0.397991, 0.353506 )
+mouse_default_cursor_shape = 2
+text = "Set time"
+align = 1
+valign = 1
+
+[node name="Exit" type="TextureButton" parent="Pause"]
+modulate = Color( 0.988235, 0.752941, 0.752941, 1 )
+margin_left = 406.0
+margin_top = 485.0
+margin_right = 479.0
+margin_bottom = 506.0
+rect_scale = Vector2( 2.72349, 2.76039 )
+action_mode = 0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Pause/Exit"]
+anchor_left = 0.06
+anchor_top = 0.25
+anchor_right = 0.905
+anchor_bottom = 0.775
+margin_left = -0.38
+margin_top = -6.25
+margin_right = 119.935
+margin_bottom = 25.725
+rect_scale = Vector2( 0.350536, 0.437837 )
+mouse_default_cursor_shape = 2
+text = "Exit & Save"
+align = 1
+valign = 1
+
+[node name="InGameSettings" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Background3" type="Panel" parent="InGameSettings"]
+modulate = Color( 0, 0, 0, 0.243137 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background2" type="Panel" parent="InGameSettings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="FullScreen\?" type="TextureButton" parent="InGameSettings"]
+margin_left = 347.0
+margin_top = 146.0
+margin_right = 439.0
+margin_bottom = 251.0
+rect_scale = Vector2( 0.760202, 0.592107 )
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="Label2" type="Label" parent="InGameSettings/FullScreen\?"]
+margin_left = 83.0
+margin_right = 208.0
+margin_bottom = 27.0
+rect_scale = Vector2( 3.05979, 3.53004 )
+theme = ExtResource( 1 )
+text = "Fullscreen"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="InGameSettings/FullScreen\?"]
+
+[node name="Label" type="Label" parent="InGameSettings"]
+margin_left = 410.0
+margin_top = 237.0
+margin_right = 536.0
+margin_bottom = 258.0
+rect_scale = Vector2( 1.58782, 1.69371 )
+text = "Master Volume"
+align = 1
+valign = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="InGameSettings"]
+margin_left = 369.0
+margin_top = 281.0
+margin_right = 648.0
+margin_bottom = 313.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="InGameSettings"]
+margin_left = 410.0
+margin_top = 342.0
+margin_right = 536.0
+margin_bottom = 363.0
+rect_scale = Vector2( 1.58782, 1.69371 )
+text = "Music Volume"
+align = 1
+valign = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="InGameSettings"]
+margin_left = 369.0
+margin_top = 386.0
+margin_right = 648.0
+margin_bottom = 418.0
+min_value = -30.0
+max_value = 0.0
+
+[connection signal="pressed" from="Pause/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Pause/DebugSetTime" to="." method="_on_DebugSetTime_pressed"]
+[connection signal="pressed" from="Pause/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="toggled" from="InGameSettings/FullScreen?" to="." method="_on_FullScreen_toggled"]
+[connection signal="value_changed" from="InGameSettings/MasterVolumeSlider" to="." method="_on_MasterVolumeSlider_value_changed"]
+[connection signal="value_changed" from="InGameSettings/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]

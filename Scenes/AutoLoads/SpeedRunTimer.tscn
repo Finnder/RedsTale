@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/SpeedRunTimer.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Art/UI/SpeedRunPanel.png" type="Texture" id=3]
+
+[node name="SpeedRunTimer" type="Control"]
+anchor_right = 0.093
+anchor_bottom = 0.057
+margin_right = -95.232
+margin_bottom = -34.2
+script = ExtResource( 2 )
+
+[node name="SpeedRunPanel" type="Panel" parent="."]
+self_modulate = Color( 0.666667, 0.666667, 0.666667, 0.341176 )
+margin_right = 95.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpeedRunPanel"]
+position = Vector2( 50, 20 )
+scale = Vector2( 1.6875, 1.75 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Label" parent="SpeedRunPanel"]
+pause_mode = 2
+margin_left = 2.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 35.0
+grow_horizontal = 2
+rect_scale = Vector2( 1.29854, 1.06524 )
+text = "0.0"
+align = 1
+valign = 1
+
+[node name="speedrun_timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="speedrun_timer" to="." method="_on_speedrun_timer_timeout"]
